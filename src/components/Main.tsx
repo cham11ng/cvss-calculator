@@ -38,7 +38,7 @@ const Main = () => {
       const baseScore = calculateBaseScore(newMetricWeights)
       const severity = checkSeverity(baseScore)
 
-      setResult(severity)
+      setResult({ baseScore, severity })
     }
   };
 
