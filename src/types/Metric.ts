@@ -1,12 +1,12 @@
 export enum Metric {
-  ATTACK_VECTOR = 'attackVector',
-  ATTACK_COMPLEXITY = 'attackComplexity',
-  PRIVILEGE_REQUIRED = 'privilegeRequired',
-  USER_INTERACTION = 'userInteraction',
-  SCOPE = 'scope',
-  CONFIDENTIALITY = 'confidentiality',
-  INTEGRITY = 'integrity',
-  AVAILABILITY = 'availability'
+  ATTACK_VECTOR = 'AV',
+  ATTACK_COMPLEXITY = 'AC',
+  PRIVILEGE_REQUIRED = 'PR',
+  USER_INTERACTION = 'UI',
+  SCOPE = 'S',
+  CONFIDENTIALITY = 'C',
+  INTEGRITY = 'I',
+  AVAILABILITY = 'A'
 }
 
 export default Metric

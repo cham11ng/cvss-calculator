@@ -1,7 +1,7 @@
 import { describe, it, expect } from "bun:test";
 
 import Scope from '../src/types/Scope';
-import { getCVSS31, calculateBaseScore } from '../src/utils/cvss';
+import { getCVSS31, calculateBaseScore } from '../src/utils';
 
 describe("getCVSS31()", () => {
   it('should successfully return CVSS 3.1 metric if nothing passed.', () => {
@@ -23,28 +23,33 @@ describe("getCVSS31()", () => {
 });
 
 describe("calculateBaseScore()", () => {
-  it('should calculate', () => {
-    const scope = Scope.UNCHANGED;
-    const impactConfidentiality = 0.56;
-    const impactIntegrity = 0;
-    const impactAvailability = 0;
-    const attackVector = 0.85;
-    const attackComplexity = 0.77;
-    const privilegesRequired = 0.85;
-    const userInteraction = 0.85;
+  it('should calculate high correctly', () => {
+    const baseScore = calculateBaseScore({
+      scope: Scope.UNCHANGED,
+      confidentiality: 0.56,
+      integrity: 0,
+      availability: 0,
+      attackVector: 0.85,
+      attackComplexity: 0.77,
+      privilegeRequired: 0.85,
+      userInteraction: 0.85
+    });
 
-    const baseScore = calculateBaseScore(
-      scope,
-      impactConfidentiality,
-      impactIntegrity,
-      impactAvailability,
-      attackVector,
-      attackComplexity,
-      privilegesRequired,
-      userInteraction
-    );
-
-    console.log(`Base Score: ${baseScore}`);
     expect(baseScore).toBe(7.5)
+  })
+
+  it('should calculate medium correctly', () => {
+    const baseScore = calculateBaseScore({
+      "attackVector": 0.85,
+      "attackComplexity": 0.44,
+      "userInteraction": 0.85,
+      "scope": "U",
+      "confidentiality": 0.22,
+      "integrity": 0.22,
+      "availability": 0,
+      "privilegeRequired": 0.62
+    });
+
+    expect(baseScore).toBe(4.2)
   })
 })
