@@ -1,6 +1,6 @@
 # cvss-calculator
 
-CVSS (Common Vulnerability Scoring System) provides the numerical representation of Information Security vulnerabilities. The project is rewritten in React using bun to provide developer friendly understanding behind the CVSS calculaton. The original project link: https://github.com/cvssjs/cvssjs.
+CVSS (Common Vulnerability Scoring System) provides the numerical representation and calculates base score of impact of Information Security vulnerabilities. The project is rewritten in React using bun. The original project link: https://github.com/cvssjs/cvssjs.
 
 # development
 
