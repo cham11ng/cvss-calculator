@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/cvss-calculator/static/css/main.9897fa16.css",
+    "main.js": "/cvss-calculator/static/js/main.31bd7e8f.js",
+    "static/js/787.16816448.chunk.js": "/cvss-calculator/static/js/787.16816448.chunk.js",
+    "static/media/cvssicons.png": "/cvss-calculator/static/media/cvssicons.07bc26dee1d2d2921333.png",
+    "index.html": "/cvss-calculator/index.html",
+    "main.9897fa16.css.map": "/cvss-calculator/static/css/main.9897fa16.css.map",
+    "main.31bd7e8f.js.map": "/cvss-calculator/static/js/main.31bd7e8f.js.map",
+    "787.16816448.chunk.js.map": "/cvss-calculator/static/js/787.16816448.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9897fa16.css",
+    "static/js/main.31bd7e8f.js"
+  ]
+}
