@@ -7,8 +7,8 @@ import { calculateBaseScore, checkSeverity, getCVSS31, getWeight } from '../util
 const Main = () => {
   const [metrics, setMetrics] = useState({})
   const [metricWeights, setMetricWeights] = useState({})
+  const [vector, setVector] = useState(getCVSS31({}))
   const [result, setResult] = useState<any>({
-    vector: getCVSS31({}),
     baseScore: null,
     severity: {
       name: "?",
@@ -32,15 +32,13 @@ const Main = () => {
 
     setMetrics(newMetrics)
     setMetricWeights(newMetricWeights)
+    setVector(getCVSS31(newMetrics))
 
     if (Object.keys(newMetrics).length === Object.keys(metricToName).length) {
       const baseScore = calculateBaseScore(newMetricWeights)
-      const output = {
-        vector: getCVSS31(newMetrics),
-        baseScore,
-        severity: checkSeverity(baseScore)
-      }
-      setResult(output)
+      const severity = checkSeverity(baseScore)
+
+      setResult(severity)
     }
   };
 
@@ -82,8 +80,8 @@ const Main = () => {
               {result.severity.name}
               <sub>{result.severity.bottom} - {result.severity.top}</sub>
             </span><span className="score">{result.baseScore}</span>
-            <a className="vector" href={`#${result.vector}`}>{result.vector}</a>
-            <CopyButton text={result.vector} className='copy-button'>Copy</CopyButton>
+            <a className="vector" href={`#${vector}`}>{vector}</a>
+            <CopyButton text={vector} className='copy-button'>Copy</CopyButton>
           </label>
         </dd>
       </dl>
