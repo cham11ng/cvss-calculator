@@ -82,7 +82,7 @@ const Main = () => {
               {result.severity.name}
               <sub>{result.severity.bottom} - {result.severity.top}</sub>
             </span><span className="score">{result.baseScore}</span>
-            <a className="vector">{result.vector}</a>
+            <a className="vector" href={`#${result.vector}`}>{result.vector}</a>
             <CopyButton text={result.vector} className='copy-button'>Copy</CopyButton>
           </label>
         </dd>

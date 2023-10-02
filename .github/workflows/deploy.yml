@@ -1,4 +1,4 @@
-name: Deploy CVSS Calc
+name: Deploy CVSS Calculator
 
 on:
   push:
