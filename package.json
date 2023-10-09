@@ -1,6 +1,6 @@
 {
   "name": "cvss-calculator",
-  "homepage": "https://cham11ng.github.io/cvss-calculator",
+  "homepage": "https://schamling.com.np/cvss-calculator",
   "version": "0.1.0",
   "dependencies": {
     "@types/node": "^20.8.0",
